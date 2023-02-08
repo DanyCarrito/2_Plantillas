@@ -18,7 +18,7 @@ public:
 		y = _y;
 	}
 
-	//retorna la londitud del vetor sin sacar raiz cuadrada
+
 	T sqrMagnitude()
 	{
 		return x * x + y * y;

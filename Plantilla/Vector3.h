@@ -1,4 +1,6 @@
 #pragma once
+#include <iostream>
+#include <sstream>
 
 template <class T>
 
@@ -15,28 +17,36 @@ public:
 		y = 0;
 		z = 0;
 	}
-	Vector3(T _x, T _y, T _z, )
-	{
+
+	Vector3(T _x, T _y, T _z) {
 		x = _x;
 		y = _y;
 		z = _z;
 	}
 
-	//retorna la longitud del vetor sin sacar raiz cuadrada
 	T sqrMagnitude() {
 		return x * x + y * y + z * z;
 	}
 
-	T suma() {
-		return (x, y, z) + (x, y, z);
+	T suma(Vector3 <T> vec2) {
+		//return  "(" << x + vec2.x << "," y + vec2.y "," + z + vec2.z << ")";
 	}
 
-	T punto() {
-		return x * x + y * y + z * z;
+	T dot(Vector3 <T> vec2) {
+		return x * vec2.x + y * vec2.y + z * vec2.z;
 	}
 
-	T cruz() {
-		return ((y * z) - (z * y)) - ((x * z) - (z * x)) - ((y * z) - (z * y));
+	T cruz(Vector3<T> vec2) {
+		vec2 b;
+		b.x = x * 2;
+		b.y = y * 2;
+		b.z = z * 2;
+	}
+
+	std::string ToString() {
+		std::ostringstream ss;
+		ss << "(" << x << "," << y << "," << z << ")";
+		return ss.str();
 	}
 };
 

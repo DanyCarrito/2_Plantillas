@@ -123,29 +123,28 @@ int main()
 
     std::cout << "velocidad: (" << v1->x << "," << v1->y << "), rapidez=" << v1->sqrMagnitude() << std::endl;
 
-    MiVector2<float>* v2 = new MiVector2<float>(4, 3);
-    std::cout << "velocidad: (" << v2->x << "," << v2->y << "), rapidez=" << v2->sqrMagnitude() << std::endl;
+    puts("********************");
+    puts("       TAREA        ");
+    puts("********************");
 
-    //Suma de vectores
-    Vector3<float>* v4 = new Vector3<float>(7, 4, 7);
-    Vector3<float>* v5 = new Vector3<float>(6, 8, 9);
+    //vectores
+    Vector3<float>* u = new Vector3<float>(6, 4, 7);
+    Vector3<float>* v = new Vector3<float>(6, 8, 9);
 
-    std::cout << "vector1:(" << v4->x << "," << v4->y << "," << v4->z << ") + vector2:(" << v5->x << "," << v5->y << "," << v5->z << ") = " << v5->suma() << std::endl;
+    //ToString()
+    std::cout << "U = " << u->ToString() << std::endl; 
+    std::cout << "V = " << v->ToString() << std::endl;
+
+    //suma de vectores
+    float sumita = u->suma(*v);
+    std::cout << "u + v = " << sumita << std::endl;
 
     // producto punto
-    Vector3<float>* v6 = new Vector3<float>(7, 8, 9);
-    Vector3<float>* v7 = new Vector3<float>();
-
-    std::cout << "C: (" << v6->x << "," << v6->y << "," << v6->z << ") + vector2:(" << v7->x << "," << v7->y << "," << v7->z << ") = " << v7->punto() << std::endl;
+    float productoPunto = u->dot(*v);
+    std::cout << "u*v = " << productoPunto << std::endl;
 
     //producto cruz
 
     //sqrmagnitude
-    Vector3<float>* v3 = new Vector3<float>(8, 9, 10);
-
-    std::cout << "velocidad: (" << v3->x << "," << v3->y << "," << v3->z << "), rapidez=" << v3->sqrMagnitude() << std::endl;
-
-    //ToString()
-
-
+    std::cout << "Magnitud U =" << u->sqrMagnitude() << std::endl;
 }
